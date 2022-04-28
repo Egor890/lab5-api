@@ -1,8 +1,8 @@
 <template>
   <h2>User's list</h2>
   <div id="app">
-  <loader object="#ff9633" color1="#ffffff" color2="#17fd3d" size="5" speed="2" bg="#343a40" objectbg="#999793" opacity="80" name="circular"></loader>
-</template>
+  <div id="preloader" class="visible"></div>
+
     <div class="card" v-for="user in users" :key="user.id.value">
       <div class="header">
         <img
@@ -53,7 +53,9 @@
 import loader from "vue-ui-preloader";
 export default {
   name: 'App',
-  components: {},
+  components: {
+    
+  },
 
   data() {
     return {
@@ -78,6 +80,20 @@ export default {
       });
   },
 };
+function loadData() {
+  return new Promise((resolve, reject) => {
+    // setTimeout не является частью решения
+    // Код ниже должен быть заменен на логику подходящую для решения вашей задачи
+    setTimeout(resolve, 500);
+  })
+}
+
+loadData()
+  .then(() => {
+    let preloaderEl = document.getElementById('preloader');
+    preloaderEl.classList.add('hidden');
+    preloaderEl.classList.remove('visible');
+  });
 </script>
 
 <style>
@@ -147,5 +163,35 @@ a {
   flex-direction: column;
   justify-content: space-around;
   margin: 10px 20px auto;
+}
+
+
+
+
+
+
+/*preorder*/
+#preloader {
+      position: fixed;
+      
+      left: 0;
+      top: 0;
+      z-index: 999;
+      width: 100%;
+      height: 100%;
+      overflow: visible;
+      background: #fbfbfb url('//cdnjs.cloudflare.com/ajax/libs/file-uploader/3.7.0/processing.gif') no-repeat center center;
+}
+    
+.visible {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 2s linear;
+}
+
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 2s, opacity 2s linear;
 }
 </style>
