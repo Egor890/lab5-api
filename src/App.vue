@@ -1,7 +1,8 @@
 <template>
   <h2>User's list</h2>
   <div id="app">
-    <preloader />
+  <loader object="#ff9633" color1="#ffffff" color2="#17fd3d" size="5" speed="2" bg="#343a40" objectbg="#999793" opacity="80" name="circular"></loader>
+</template>
     <div class="card" v-for="user in users" :key="user.id.value">
       <div class="header">
         <img
@@ -49,13 +50,10 @@
 </template>
 
 <script>
-import Preloader from './Preloader.vue';
+import loader from "vue-ui-preloader";
 export default {
-  
   name: 'App',
-  components: {
-    Preloader
-  },
+  components: {},
 
   data() {
     return {
@@ -149,25 +147,5 @@ a {
   flex-direction: column;
   justify-content: space-around;
   margin: 10px 20px auto;
-}
-.preloader {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color:white;
-  z-index:9999;
-}
-.logo{
-  width:12.5rem;
-  height:12.5rem;
-  background:$logo128;
-  background-repeat:no-repeat;
-}
-p{
-  font:600 1.5rem $font 2;
 }
 </style>
