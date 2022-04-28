@@ -120,6 +120,7 @@ loadData()
   background-color: #ffffe0;
 }
 .card {
+  word-wrap:break-word;
   box-shadow: 3px 2px 5px grey;
   margin-left: 15px;
   width: 270px;
@@ -153,6 +154,7 @@ a {
   flex-direction: column;
 }
 .address {
+  
   width: 100%;
   margin-top: 5px;
   border-top: 2px solid black;
