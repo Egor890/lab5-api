@@ -51,7 +51,7 @@
 
 <script>
 import loader from "vue-ui-preloader";
-export default {
+export default  {
   name: 'App',
   components: {
     
