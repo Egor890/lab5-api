@@ -1,7 +1,8 @@
 <template>
   <h2>User's list</h2>
   <div id="app">
-  <div id="preloader" class="visible"></div>
+    <div v-if="users.length === 0"><div id="preloader"></div></div>
+    
 
     <div class="card" v-for="user in users" :key="user.id.value">
       <div class="header">
@@ -50,12 +51,10 @@
 </template>
 
 <script>
-import loader from "vue-ui-preloader";
-export default  {
+import loader from 'vue-ui-preloader';
+export default {
   name: 'App',
-  components: {
-  
-  },
+  components: {},
 
   data() {
     return {
@@ -80,22 +79,20 @@ export default  {
       });
   },
 };
-function loadData() {
+/*function loadData() {
   return new Promise((resolve, reject) => {
     // setTimeout не является частью решения
     // Код ниже должен быть заменен на логику подходящую для решения вашей задачи
     setTimeout(resolve, 500);
-  })
+  });
 }
 
-loadData()
-  .then(() => {
-    let preloaderEl = document.getElementById('preloader');
-    preloaderEl.classList.add('hidden');
-    preloaderEl.classList.remove('visible');
-  });
+loadData().then(() => {
+  let preloaderEl = document.getElementById('preloader');
+  preloaderEl.classList.add('hidden');
+  preloaderEl.classList.remove('visible');
+});*/
 </script>
-
 
 <style>
 #app {
@@ -121,7 +118,7 @@ loadData()
   background-color: #ffffe0;
 }
 .card {
-  word-wrap:break-word;
+  word-wrap: break-word;
   box-shadow: 3px 2px 5px grey;
   margin-left: 15px;
   width: 270px;
@@ -155,7 +152,6 @@ a {
   flex-direction: column;
 }
 .address {
-  
   width: 100%;
   margin-top: 5px;
   border-top: 2px solid black;
@@ -168,35 +164,20 @@ a {
   margin: 10px 20px auto;
 }
 
-
-
-
-
-
-
-
 /*preorder*/
 #preloader {
-      position: fixed;
-       transform: scale(1.9);
-      left: 0;
-      top: 0;
-      z-index: 999;
-      width: 100%;
-      height: 100%;
-      overflow: visible;
-      background: #fbfbfb url('https://cdnjs.cloudflare.com/ajax/libs/file-uploader/5.16.2/all.fine-uploader/processing.gif') no-repeat center center;
-}
-    
-.visible {
-  visibility: visible;
-  opacity: 1;
-  transition: opacity 2s linear;
+  position: fixed;
+  transform: scale(1.9);
+  left: 0;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  background: #fbfbfb
+    url('https://cdnjs.cloudflare.com/ajax/libs/file-uploader/5.16.2/all.fine-uploader/processing.gif')
+    no-repeat center center;
 }
 
-.hidden {
-  visibility: hidden;
-  opacity: 0;
-  transition: visibility 0s 2s, opacity 2s linear;
-}
+
 </style>
