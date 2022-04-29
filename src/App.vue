@@ -54,7 +54,7 @@ import loader from "vue-ui-preloader";
 export default  {
   name: 'App',
   components: {
-    
+  
   },
 
   data() {
@@ -95,6 +95,7 @@ loadData()
     preloaderEl.classList.remove('visible');
   });
 </script>
+
 
 <style>
 #app {
@@ -172,17 +173,19 @@ a {
 
 
 
+
+
 /*preorder*/
 #preloader {
       position: fixed;
-      
+       transform: scale(1.9);
       left: 0;
       top: 0;
       z-index: 999;
       width: 100%;
       height: 100%;
       overflow: visible;
-      background: #fbfbfb url('//cdnjs.cloudflare.com/ajax/libs/file-uploader/3.7.0/processing.gif') no-repeat center center;
+      background: #fbfbfb url('https://cdnjs.cloudflare.com/ajax/libs/file-uploader/5.16.2/all.fine-uploader/processing.gif') no-repeat center center;
 }
     
 .visible {
