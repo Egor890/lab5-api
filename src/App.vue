@@ -1,8 +1,9 @@
 <template>
   <h2>User's list</h2>
   <div id="app">
-    <div v-if="users.length === 0"><div id="preloader"></div></div>
-    
+    <div v-if="users.length === 0">
+      <div id="preloader"></div>
+    </div>
 
     <div class="card" v-for="user in users" :key="user.id.value">
       <div class="header">
@@ -103,7 +104,7 @@ loadData().then(() => {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -178,6 +179,4 @@ a {
     url('https://cdnjs.cloudflare.com/ajax/libs/file-uploader/5.16.2/all.fine-uploader/processing.gif')
     no-repeat center center;
 }
-
-
 </style>
