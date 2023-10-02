@@ -33,17 +33,12 @@
           }}
         </li>
 
-        <div class="card-element address">
-          Address: <br />{{ user.location.country }},{{ user.location.city }},{{
-            user.location.street.name
-          }}
-          {{ user.location.street.number }}
-        </div>
+       
         <div class="contact">
           <div class="card-element">&phone;: {{ user.phone }}</div>
 
           <div class="card-element">
-            Email: <a href="#">{{ user.email }}</a>
+            Email: fffff<a href="#">{{ user.email }}</a>
           </div>
         </div>
       </div>
